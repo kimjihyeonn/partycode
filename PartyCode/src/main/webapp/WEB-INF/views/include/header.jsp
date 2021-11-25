@@ -326,7 +326,7 @@
       <div class="modal-content" style="overflow:scroll; width:1200px; height:1200px; margin-left:-400px; ">
              <div class="modal-wrap">
              
-               <input type="text" style="width:250px; height:38px;" class="search-input" id="searchName" name="searchName" >
+               <input type="text" style="width:270px; height:38px;" class="search-input" id="searchName" name="searchName" >
                   
                          <button type="button" id="searchbtn"  class="btn" style="width:100px;"><i class="fas fa-search"></i></button>
                       
