@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+   <script>
+     function f3(f){
+         return f();
+     }
+
+console.log(f3(function() {return 10;}));
+
+function add_maker(a){
+    return function(b){
+        return a+b;
+    }
+}
+var add10=add_maker(10);
+
+console.log(add10(20));
+
+function f4(f1, f2, f3){
+    return f3(f1() + f2());
+}
+
+console.log(f4(
+    function() {return 2;},
+    function() {return 1;},
+    function(a) { return a*a;}));
+
+
+
+function _filter(users,predi){
+    var new_list =[];
+    for(var i=0; i<users.length; i++){
+        if(predi(users[i])){
+            new_list.push(users[i]);
+        }
+    }
+    
+    return new_list;
+}
+
+_filter([1,2,3,4],function)
+   </script>
+</body>
+</html>

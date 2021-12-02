@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        // 일급함수
+
+        var f1 = function(a,b){
+               return a +b ;
+        }
+       console.log(  f1(3,4));
+       var f2 = function(a){
+
+        return function(b){
+            return a+b;
+        }
+       }
+       var f3 = f2(3);
+
+       console.log(f3(5));
+
+       var f8 = function(a,b){
+           return a+b;
+       }
+
+       console.log(f8(10,11));
+
+      var users =[
+          {name:'홍길동',age:30},{name:'이순신', age:50},{name:'을지문덕',age:60}
+      ];
+
+     
+      console.log(users[0]);
+ //함수버전 filter
+      var filter = function(list,predi){
+          var ret_val =[];
+          for( var i=0; i<list.length; i++){
+              if(predi(list[i])) ret_val.push(list[i]);
+          }
+          return ret_val;
+      }
+
+      //명령형코드
+
+     
+ console.log(filter(users,function(user){ return user.age>35}));
+ console.log(    filter([1,2,3,4,5],function(val){return val%2}));
+     filter([1,2,3,4,5],function(val){return !(val%2)});
+     filter([1,2,3,4,5],function(val){return val>3});
+ var map = function(list,mapper){
+    var ret_val =[];
+
+ 
+          for( var i=0; i<list.length; i++){
+             ret_val.push(mapper(list[i]));
+          }
+        return ret_val;
+
+ }
+console.log(users.map(user=>user.age*10));
+console.log(map(users,function(user){ return user.name;}));
+console.log(map(users,user=> user.age*10));
+console.log(map(filter(users,function(user){ return user.age>35}),function(user){return user.name}));
+
+//함수형 코드 curry
+var curry = function(fn){
+    return function(a,b)
+    { 
+        return arguments.length ==2 ? fn(a,b):function(b){
+             return fn(a,b);};
+       
+    }
+
+}
+
+var curryr =function(fn){
+    return function(a,b){
+        return arguments.length ==2 ? fn(a,b):function(b){
+             return fn(b,a);};
+    }
+}
+
+var get =curryr( function(obj, key) {
+    return obj == null ? undefined : obj[key];
+});
+
+
+
+var is_object = function(obj){
+    return typeof obj == 'object' && !!obj;
+}
+
+var keys = function(obj){
+    return is_object(obj) ? Object.keys(obj): [] ;
+}
+
+var length = get('length');
+var each =function(list,iter){
+    var keyss = keys(list);
+
+    for( var i=0,len=keyss.length; i<len; i++){
+             iter(list[keyss[i]]);
+           
+          }
+          return list;
+      
+          
+}
+
+
+
+//함수형 코드 filter+each
+var filter = function(list,predi){
+          var ret_val =[];
+      each(list,function(val){
+              if(predi(val)) ret_val.push(val);
+              
+          })
+         
+          return ret_val;
+      }
+
+ console.log(   filter(users,function(user){ return user.age>29}));
+
+ //함수형 코드 map+each
+ var map = function(list,mapper){
+    var ret_val =[];
+    each(list,function(val){ 
+        
+        ret_val.push(mapper(val));
+       
+    })
+      
+        return ret_val;
+
+ }
+
+ console.log(  map(filter(users,function(user){ return user.age>20}),function(user){return user.name}));
+ console.log(     map(filter(users,function(user){ return user.age>20}),user=> user.name));
+
+ var add_maker = function(a){
+     return function(b){
+         return a+b;
+     }
+ }
+ var add10 =add_maker(10);
+ console.log(add10(3));
+function add(a,b){
+    return a+b;
+}
+
+
+
+/*var curry = function(fn){}
+     return function(a){
+         return function(b){
+             return fn(a,b);
+         }
+     }
+
+}*/
+
+var sub = curryr((a,b)=>a-b);
+var add=curry((a,b)=>a+b);
+
+console.log(sub(10,5));
+var sub10 = sub(10);
+console.log(sub10(5));
+
+
+
+var add10 =add(10);
+
+console.log(add10(3));
+console.log(add(10)(4));
+console.log(add(4,5));
+
+console.log(document.querySelectorAll('body')); //nodelist라서 map매서드 사용불가
+
+console.log(map(document.querySelectorAll('*'),function(node){return node.nodeName;})); //map함수를 이용해서 사용할 수 있음. 순수함수라서 다형성,실용성면에서 좋다.
+
+console.log(map([1,2,3,4] , function(v){
+  return v+10;
+
+}));
+
+//get함수
+
+
+
+var user1 = users[0];
+console.log(get(user1,'name'));
+console.log(get('name')(user1));
+
+
+var get_name = get('name');
+
+        console.log(get_name(user1));
+
+console.log();
+console.log(  map(filter(users,function(user){ return user.age>20}),get_name));
+console.log(  map(filter(users,function(user){ return user.age>20}),get('age')));
+console.log(  map(filter(users,function(user){ return user.age>20}),get('name')));
+
+
+//reduce
+var slice = Array.prototype.slice;
+var rest = function(list,num){
+    return slice.call(list, num || 1);
+
+}
+var reduce=function(list,iter,memo){
+    if(arguments.length==2){
+        memo = list[0];
+        list = rest(list);
+    }
+    each(list,function(val){
+        memo=iter(memo,val);
+    });
+  return   memo;
+};
+
+console.log(reduce([1,2,3,4,5],add,0));
+
+console.log(reduce([1,2,3,4,5],add,10));
+
+console.log(reduce([1,2,3,4],add,10));
+
+//파이프라인 만들기
+var pipe= function(){
+   var fns = arguments;
+   return function(arg){
+     return reduce(fns, function(arg, fn){
+            return(fn(arg))
+     },arg);
+
+   }
+}
+var go = function(arg){
+    var fns = rest(arguments);
+   return pipe.apply(null, fns)(arg);
+}
+
+var f1 = pipe(function(a){return a + 1 }, function(a){return a*2},function(a){return a*a});
+
+console.log(f1(1)+'이것은파이프');
+
+go(1,function(a){return a + 1 }, function(a){return a*2},function(a){return a*a},console.log);
+   
+
+console.log(  map(filter(users,function(user){ return user.age>20}),get('age')));
+console.log(  map(filter(users,function(user){ return user.age>20}),get('name')));
+var map = curryr(map),
+filter = curryr(filter);
+go(
+ users,
+     filter(function(user){
+           return user.age>=30;
+     }),
+ 
+ 
+      map(get('name'))
+ 
+,console.log
+);
+
+
+go(
+ users,
+      filter(user=> user.age<51
+           
+     ),
+
+ 
+     map(get('age'))
+
+,console.log
+);
+
+
+
+
+//console.log(map(function(val){return val*2})([1,2,3]));
+
+//each 에 null 넣어도 에러 안나기
+
+each(null,console.log);
+
+console.log(map(null,function(v){ return v;}));
+go([1,2,3,4,5],filter(function(v){return v%2;}), map(function(v){return v;}),console.log);
+
+//key만들기
+
+
+
+console.log(keys(users));
+console.log(Object.keys([1,2,3,4,5]));
+
+//each 다형성 높이기
+
+each({
+    13:'ID',
+    18:'HD',
+    29:'YD'
+},function(name){ console.log(name);});
+
+
+console.log(map({
+    13:'ID',
+    18:'HD',
+    29:'YD'
+},function(name){ return name.toLowerCase()}));
+
+go({
+    1:users[0],
+    3:users[1],
+    5:users[2]
+},map(function(user){ return user.age*20}),console.log);
+
+go(users,
+map(function(user){
+    return user.name;
+})
+,map(function(name){ return name.toLowerCase()}),console.log);
+</script>
+
+</body>
+</html>
