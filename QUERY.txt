@@ -1,0 +1,94 @@
+spring 
+
+
+
+
+db
+
+
+
+js
+
+let, const
+var 차이점
+
+tdz 개념
+
+templat literal
+
+arrow function
+
+vest...
+
+default parameter
+spread operation
+ajax 
+
+비동기 통신  js 쓰레드 대체
+
+
+
+한글 ->cpu =process
+
+1,2,3 => '우등생'
+
+4- 10 => '보통'
+11-99=>'노력부족'
+
+
+
+select 1+2 from dual;
+
+create view v_add4 AS select 1+2 val from dual;
+
+select *from EXAM_RSLT;
+
+select* from  v_add4;
+
+select 1+2 from dual CONNECT by LEVEL <=5;
+
+CREATE VIEW V_EX2 AS SELECT NAME, KOR+ENG+MAT TOT FROM EXAM_RSLT;
+
+SELECT *
+FROM DUAL 
+CONNECT BY LEVEL <= :A;
+
+SELECT CASE WHEN :SCORE <4 THEN '우등생'
+            WHEN :SCORE <11 THEN '보통' 
+            ELSE '노력부족' END 
+            ,DECODE(:SCORE, 1 ,'우등생',2,'우등생',3,'우등생',4,'보통') RSLT1
+            ,DECODE(SIGN(:SCORE-4), -1 ,'우등생',DECODE(SIGN(:SCORE-11),-1,'보통','노력부족'))RSLT2
+FROM DUAL;
+
+
+CREATE VIEW V_SAMPLE5 AS 
+SELECT*
+FROM DUAL;
+
+
+
+SELECT*
+FROM COURSE_CREDITS;
+
+SELECT 
+  CLASS
+  ,(SELECT GRADE FROM COURSE_CREDITS B WHERE A.KOR BETWEEN B.ST_RNG AND B.ET_RNG)||'('||KOR||')' KOR_GRD
+  ,(SELECT GRADE FROM COURSE_CREDITS B WHERE A.ENG BETWEEN B.ST_RNG AND B.ET_RNG)||'('||ENG||')'  ENG_GRD
+  ,(SELECT GRADE FROM COURSE_CREDITS B WHERE A.MAT BETWEEN B.ST_RNG AND B.ET_RNG)||'('||MAT||')'  MAT_GRD
+FROM(
+SELECT CLASS,
+    ROUND(AVG(KOR),1) KOR
+    ,ROUND( AVG(ENG),1) ENG
+    ,ROUND( AVG(MAT),1) MAT
+    
+FROM EXAM_RSLT
+WHERE GRADE IN (SELECT ROWNUM FROM DUAL CONNECT BY LEVEL <=3)
+GROUP BY CLASS) A;
+
+
+SELECT CLASS,
+    ROUND(AVG(KOR),1) KOR
+    ,ROUND( AVG(ENG),1) ENG
+    ,ROUND( AVG(MAT),1) MAT
+    
+FROM EXAM_RSLT GROUP BY CLASS;

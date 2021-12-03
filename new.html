@@ -86,6 +86,7 @@ var curryr =function(fn){
     }
 }
 
+//get함수
 var get =curryr( function(obj, key) {
     return obj == null ? undefined : obj[key];
 });
@@ -190,7 +191,6 @@ console.log(map([1,2,3,4] , function(v){
 
 }));
 
-//get함수
 
 
 
@@ -235,6 +235,7 @@ console.log(reduce([1,2,3,4],add,10));
 //파이프라인 만들기
 var pipe= function(){
    var fns = arguments;
+   
    return function(arg){
      return reduce(fns, function(arg, fn){
             return(fn(arg))
@@ -328,6 +329,8 @@ map(function(user){
     return user.name;
 })
 ,map(function(name){ return name.toLowerCase()}),console.log);
+
+    
 </script>
 
 </body>
