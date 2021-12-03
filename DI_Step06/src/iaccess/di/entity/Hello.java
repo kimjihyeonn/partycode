@@ -10,7 +10,6 @@ public class Hello {
 	public Hello() {
 		
 	}
-
 	public Hello(Printer p) {
 		super();
 		this.printer = p;

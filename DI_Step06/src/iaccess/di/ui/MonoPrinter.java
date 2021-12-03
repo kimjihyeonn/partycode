@@ -7,6 +7,7 @@ public class MonoPrinter implements Printer {
 		System.out.println("====(monoprint)");
 		System.out.println(msg);
 		System.out.println("=====mono-end===");
+	
 	}
 
 }
