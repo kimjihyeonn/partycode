@@ -24,7 +24,7 @@ import lombok.ToString;
 public class Hello {
     
 	@Autowired
-	@Qualifier("monoPrinter")
+	@Qualifier("colorPrinter")
 	private Printer printer;
 	
 	
@@ -32,7 +32,7 @@ public class Hello {
 	String name;
 
 	
-	//@Autowired
+	
 	public Hello(Printer printer) {
 		System.out.println("생성자인젝션");
 		this.printer = printer;
@@ -45,16 +45,13 @@ public class Hello {
 			printer.print(name+" " +s);
 		}
 	}
-	//@Autowired
+	
 	public void setPrinter(Printer printer) {
 		System.out.println("세터인젝션");
 		this.printer = printer;
 	}
-	//@Autowired
-	public void xasdasdPrinter(Printer printer) {
-		System.out.println("세터인젝션");
-		this.printer = printer;
-	}
+	
+	
 	
 	
 }

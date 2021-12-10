@@ -2,7 +2,7 @@ package iaccess.di.ui;
 
 import org.springframework.stereotype.Component;
 
-@Component
+@Component("colorPrinter")
 public class ColorPrinter implements Printer {
 
 	@Override

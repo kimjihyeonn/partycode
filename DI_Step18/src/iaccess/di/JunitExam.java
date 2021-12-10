@@ -17,8 +17,12 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.context.support.GenericApplicationContext;
+import org.springframework.context.support.GenericXmlApplicationContext;
 import org.springframework.test.context.ContextConfiguration;
+import org.springframework.test.context.TestExecutionListeners;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import iaccess.di.entity.Hello;
@@ -28,30 +32,26 @@ import iaccess.di.ui.Printer;
 
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(locations = "classpath:iaccess/di/config.xml")
+@ContextConfiguration(classes= Iass_di_config.class)
 public class JunitExam {
 
-
-	@Autowired
+    @Autowired
 	ApplicationContext context;
 
-
+		
 
 	@Test
 	public void bean1() {
-
-
+         
+		
+		
+		
 		Hello hello =context.getBean(Hello.class);
 		
-		
-		hello.print("hello");
-		
-		
-	String[] beannames =	context.getBeanDefinitionNames();
 	
-	System.out.println(beannames[0]);
+		
 
-		//hello.print("HELLO");
+		hello.print("HELLO");
 		//System.out.println(hello.toString());
 
 
@@ -59,29 +59,5 @@ public class JunitExam {
 
 
 
-
-
-	@Ignore
-	@Test
-	public void bean2() {
-
-		System.out.println("================");
-		System.out.println("bean2 객체 : " + this);
-		System.out.println("bean2 contest:" +context);
-		System.out.println("================");
-
-
-
-		Hello hello1 = context.getBean("hello",Hello.class);
-
-
-		Hello hello2 = context.getBean("hello1",Hello.class);
-
 	
-
-
-
-
-
-	}
 }

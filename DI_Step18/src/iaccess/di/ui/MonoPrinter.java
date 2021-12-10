@@ -2,7 +2,7 @@ package iaccess.di.ui;
 
 import org.springframework.stereotype.Component;
 
-@Component
+@Component("monoPrinter")
 public class MonoPrinter implements Printer {
 
 	@Override
