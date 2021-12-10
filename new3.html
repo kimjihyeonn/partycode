@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="functionprac.js"></script>
+</head>
+<body>
+
+    <script>
+        var users = [{name:'홍길동',age:30},{name:'김지현',age:50},{name:'을지문덕',age:60}]
+        var users2 = {0:'i',
+                      1:'b',length:2}
+      console.log(users2.length);
+        console.log(Object.keys(users));
+        console.log(users[0].name);
+        console.log(users);
+        console.log(users[2]['age']);
+
+        console.log(get('name')(users[0]));
+      console.log(filter(user=>user.age>50)(users));
+     
+      reduce([filter(function(user){return user.age>30;}),map(get('name')),document.write.bind(document)],function(arg,fn){return fn(arg);},users);
+      
+      console.log(map(get('age'))(filter(users,user=>user.age>30)));
+      console.log(map(get('name'))(users));
+      
+
+    
+       go(users,filter(user=>user.age>35),
+      map(get('name')),document.write.bind(document));
+
+     pipe(filter(function(user){return user.age>30}),map(function(user){return user.name}),console.log)(users);
+     var fn=  filter(function(user){return user.age>30})
+     console.log(fn(users));
+
+
+     
+      document.write(map(filter(user=>user.age>30)(users),function(user){return user.age}));
+      console.log(map(get('age'))(users));
+      document.write(map(get('name'))(users));
+
+      console.log(typeof(map(filter(users,(user=>user.age>30)),get('age'))));
+
+
+      var num=10;
+       
+      document.write(--num);
+      var add =   function(a,b){
+           return a+b;
+         }
+
+       console.log(add(2,5,6));
+
+     console.log(reduce([1,2,3,4,5],function(a,b){return a+b},0));
+   
+     console.log(map(filter(user=> user.age>30)(users),get('age')));
+   
+
+     go(users,filter(user=>user.name=='홍길동'),map(get('age')),console.log);
+
+     var p5 = pipe(filter(user=>user.name=='홍길동'),map(get('age')),a=>a*10,document.write.bind(document));
+
+     p5(users);
+
+
+   </script>
+    
+</body>
+</html>

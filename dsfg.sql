@@ -1,0 +1,6 @@
+
+
+
+select REGEXP_SUBSTR('82CADS1FASDFDFDFDCD0FDFD0','..$')
+
+	from dual

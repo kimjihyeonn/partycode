@@ -104,7 +104,7 @@ var keys = function(obj){
 var length = get('length');
 var each =function(list,iter){
     var keyss = keys(list);
-
+       
     for( var i=0,len=keyss.length; i<len; i++){
              iter(list[keyss[i]]);
            
@@ -234,12 +234,13 @@ console.log(reduce([1,2,3,4],add,10));
 
 //파이프라인 만들기
 var pipe= function(){
-   var fns = arguments;
+   var fns = arguments;  //함수들 f,f,f o , [f,f,f] x
    
-   return function(arg){
+   return function(arg){ //arg=초기값
      return reduce(fns, function(arg, fn){
-            return(fn(arg))
-     },arg);
+         
+            return(fn(arg)) },arg);
+           
 
    }
 }
@@ -250,10 +251,16 @@ var go = function(arg){
 
 var f1 = pipe(function(a){return a + 1 }, function(a){return a*2},function(a){return a*a});
 
+
+reduce([function(val){return val+10},
+function(val){return val*10},function(val){return console.log(val);}],function(acc,fn){return fn(acc);},100);
+
 console.log(f1(1)+'이것은파이프');
 
+console.log(f1(5));
+
 go(1,function(a){return a + 1 }, function(a){return a*2},function(a){return a*a},console.log);
-   
+
 
 console.log(  map(filter(users,function(user){ return user.age>20}),get('age')));
 console.log(  map(filter(users,function(user){ return user.age>20}),get('name')));
@@ -264,7 +271,6 @@ go(
      filter(function(user){
            return user.age>=30;
      }),
- 
  
       map(get('name'))
  
@@ -322,7 +328,7 @@ go({
     1:users[0],
     3:users[1],
     5:users[2]
-},map(function(user){ return user.age*20}),console.log);
+},map(get('age')),console.log);
 
 go(users,
 map(function(user){

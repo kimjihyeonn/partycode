@@ -1,4 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <aop-reference-model>
+<aop-project name="DI_Step8"/>
 <aop-project name="PartyCode"/>
+<aop-project name="DI_Step11"/>
+<aop-project name="DI_Step06"/>
+<aop-project name="DI_Step9_2"/>
+<aop-project name="DI_Step7"/>
+<aop-project name="DI_Step9"/>
+<aop-project name="DI_Step12"/>
+<aop-project name="DI_Step10"/>
+<aop-project name="DI_Step9_1"/>
+<aop-project name="DI_Step9_3"/>
 </aop-reference-model>

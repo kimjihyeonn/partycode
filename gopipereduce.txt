@@ -1,0 +1,38 @@
+문법
+
+[] : 배열
+{}: object
+function add : 함수 선언
+
+클로저 함수를 이용 (렉시컬스코프 저장)
+add(): 호출
+
+
+일급함수 함수를 값으로 취급하는것
+
+#add_maker 
+
+var add_maker =function (a){
+return function(b){
+return a+b;
+
+}
+
+
+var add = function(a,b) {
+return a+b;
+}
+var sub =function(a){
+return function(b){
+ return a-b;}
+
+
+
+var add= curry(add)
+
+
+[1,2,3,4,5].reduce(function(acc,val){ return acc>val ?acc:val;})
+
+
+
+

@@ -300,3 +300,23 @@ LAST_DAY(TO_DATE(:V_ET,'YYYYMM'))-TO_DATE(:V_ST,'YYYYMM')+1
 )GROUP BY M_ID,WK_ID
 ORDER BY M_ID, WK_ID;
 
+
+
+SPRING
+1. DI -> 다형성 => 인터페이스
+             XML, @ , COMPONANT:SCAN,@CONFIG => JAVACLASS
+ 2.JUNIT @before,@after,@test 테스트
+  method 테스트
+3.AOP proxy 대행한다. 공통,핵심코드
+controller->service->dao
+
+4.mybatis,JPA   ERD  DB단
+
+5.@MVC -> webarchiteccher
+
+java관계
+
+상속(is-A)
+사용(has-A)
+
+
