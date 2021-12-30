@@ -9,7 +9,7 @@ public class DiExam {
 
 	public static void main(String[] args) throws ClassNotFoundException {
 		
-		ApplicationContext ctx = new GenericXmlApplicationContext("iaccess/di/test/config.xml");
+		ApplicationContext ctx = new GenericXmlApplicationContext("iaccess/di/config.xml");
 		
 		
 		//Hello hello = (Hello)ctx.getBean("hello");

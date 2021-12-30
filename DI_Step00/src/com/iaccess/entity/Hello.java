@@ -6,6 +6,7 @@ import com.iaccess.ui.Printer;
 public class Hello {
 
 	private Printer printer;
+	private String pp;
 	
 	public Hello() {
 		

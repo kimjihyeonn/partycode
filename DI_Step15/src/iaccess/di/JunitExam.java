@@ -44,8 +44,8 @@ public class JunitExam {
 		Hello hello =context.getBean(Hello.class);
 		
 		
-		//hello.print("HELLO");
-		//System.out.println(hello.toString());
+		hello.print("HELLO");
+		System.out.println(hello.toString());
 
 
 	}

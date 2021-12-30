@@ -41,10 +41,15 @@ public class JunitExam {
 	public void bean1() {
 
 
-		Hello hello =context.getBean(Hello.class);
+		Hello hello =context.getBean("${hello}",Hello.class);
 		hello.print("HELLO");
 		System.out.println(hello.toString());
-
+		
+          String[] names= context.getBeanDefinitionNames();
+          
+          for(String name : names) {
+        	  System.out.println(name);
+          }
 
 	}
 

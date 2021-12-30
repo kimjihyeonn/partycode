@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="SelectCdataMapper">
+  <select id="examDate" resultType="co.kr.mono.training.dto.SimpleDTO">
+ select sysdate utilcurrentdate
+       ,sysdate sqlcurrentdate
+       ,sysdate sqlcurrenttimestamp
+       ,to_char(sysdate,'YYYY-MM-DD HH24:MI:SS') currentstrdate
+       ,CURRENT_TIMESTAMP sqldbcurrenttimestamp
+       from dual
+  </select>
+  
+ 
+  
+  
+</mapper>

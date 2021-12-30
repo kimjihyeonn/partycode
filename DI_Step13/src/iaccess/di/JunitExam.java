@@ -41,7 +41,7 @@ public class JunitExam {
 	public void bean1() {
 
 
-		Hello hello =context.getBean(Hello.class);
+		Hello hello =context.getBean("hello".toString(),Hello.class);
 		hello.print("HELLO");
 		System.out.println(hello.toString());
 
@@ -52,7 +52,7 @@ public class JunitExam {
 
 
 
-	@Ignore
+
 	@Test
 	public void bean2() {
 
@@ -63,11 +63,10 @@ public class JunitExam {
 
 
 
-		Hello hello1 = context.getBean("hello",Hello.class);
 
 
-		Hello hello2 = context.getBean("hello1",Hello.class);
 
+	
 	
 
 

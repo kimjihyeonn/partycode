@@ -13,9 +13,6 @@ public class Test {
 	public static void main(String[] args) {
 
 
-	    Person p = new Doctor();
-	    
-	    p.hello3();
 	    
 	    
 	    Collection<Integer> c = new ArrayList<Integer>();

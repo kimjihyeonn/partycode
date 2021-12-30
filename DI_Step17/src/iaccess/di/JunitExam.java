@@ -49,10 +49,9 @@ public class JunitExam {
 		
 	String[] beannames =	context.getBeanDefinitionNames();
 	
-	System.out.println(beannames[0]);
-
-		//hello.print("HELLO");
-		//System.out.println(hello.toString());
+	for(String beanname : beannames) {
+		System.out.println(beanname);
+	}
 
 
 	}

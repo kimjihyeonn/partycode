@@ -1,0 +1,10 @@
+1.Aspect
+공통실행 클래스
+
+2.advice
+공통실행 메소드
+3.point cut
+
+4.join point
+호환이 가능한 인터페이스, 
+5.proxy

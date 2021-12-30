@@ -1,5 +1,7 @@
 package iaccess.di.entity;
 
+import org.springframework.stereotype.Component;
+
 import lombok.AllArgsConstructor;
 
 import lombok.Getter;
@@ -13,6 +15,7 @@ import lombok.ToString;
 @Getter
 @Setter
 @ToString
+@Component
 public class Person implements Comparable<Person> {
 
 	private String name;

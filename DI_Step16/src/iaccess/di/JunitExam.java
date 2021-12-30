@@ -61,7 +61,7 @@ public class JunitExam {
 
 
 
-	@Ignore
+	
 	@Test
 	public void bean2() {
 
@@ -75,7 +75,6 @@ public class JunitExam {
 		Hello hello1 = context.getBean("hello",Hello.class);
 
 
-		Hello hello2 = context.getBean("hello1",Hello.class);
 
 	
 

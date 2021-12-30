@@ -32,13 +32,13 @@ import iaccess.di.ui.Printer;
 
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(classes= Iass_di_config.class)
+@ContextConfiguration(classes=Iass_di_config.class)
 public class JunitExam {
 
     @Autowired
 	ApplicationContext context;
 
-		
+		//싱글톤,프로토타입
 
 	@Test
 	public void bean1() {
@@ -48,8 +48,14 @@ public class JunitExam {
 		
 		Hello hello =context.getBean(Hello.class);
 		
-	
+	  
+		String[] beanName= context.getBeanDefinitionNames();
 		
+		System.out.println(beanName[4]);
+		for(String beanss : beanName) {
+			
+			System.out.println(beanss);
+		}
 
 		hello.print("HELLO");
 		//System.out.println(hello.toString());

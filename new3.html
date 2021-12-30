@@ -11,6 +11,25 @@
 <body>
 
     <script>
+     { 
+       function a(){
+          let i = 0;
+         for( i = 0; i <5; i++){
+           
+            console.log(i)
+            
+         }
+         console.log(i);
+       }
+       a();
+     }
+
+      var memo=4;
+      var val=3;
+    var add=console.log(function(a,b){
+      return a+b;
+    }(memo,val));
+    
         var users = [{name:'홍길동',age:30},{name:'김지현',age:50},{name:'을지문덕',age:60}]
         var users2 = {0:'i',
                       1:'b',length:2}
@@ -65,6 +84,39 @@
      var p5 = pipe(filter(user=>user.name=='홍길동'),map(get('age')),a=>a*10,document.write.bind(document));
 
      p5(users);
+  
+
+     console.log(map(identity)(users[0]));
+      console.log(map(users[0]));
+     console.log(values(users[0]));
+
+     var a= 10;
+     console.log(identity(a));
+     console.log(pluck(users,'age'));
+
+     console.log(
+       reject(users,function(user){
+         return user.age>30;
+       })
+     )
+
+     console.log(compact([1,2,0,false,null,{}]));
+
+     console.log(find(users,function(user){return user.age>30}));
+     console.log(find_index(users,function(user){return user.name=='김지현'}));
+
+     console.log(some([false,null]));
+     console.log(every([false,0,1,2]));
+     console.log(min([1,2,3,4,5]));
+     console.log(max([1,2,3,4,5]));
+     console.log(min_by([11,22,33,44,55,-6],Math.abs));
+go(users,group_by(user=>user.name),console.log);
+ console.log(push({},users[0].name,users[0]));
+
+
+
+go(users,count_by(user=>users.age>30),console.log);
+
 
 
    </script>

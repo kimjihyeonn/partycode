@@ -8,7 +8,7 @@
 
 
 	
-	<bean id="${hello}" class="iaccess.di.entity.Hello"/>
+	<bean id="hello" class="iaccess.di.entity.Hello"/>
 	
 
  <context:property-placeholder location="classpath:iaccess/di/personlist.properties" />

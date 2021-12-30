@@ -5,10 +5,11 @@
 
 <bean id="mprinter" class="iaccess.di.ui.MonoPrinter"></bean>  <!--생성자 applicationcontext interface -->
 <bean id="cprinter" class="iaccess.di.ui.ColorPrinter"></bean><!--생성자  -->
+<bean id="doll" class="iaccess.di.ui.Doll"></bean><!--생성자  -->
 
 
 <bean id="hello" class="iaccess.di.entity.Hello"><!--생성자  -->
- <property name="printer" ref="cprinter"></property> <!-- setPrinter -->
+  <property name="printer" ref="mprinter"></property>
 </bean>
 
 </beans>
