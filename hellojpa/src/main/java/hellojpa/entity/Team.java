@@ -33,6 +33,10 @@ public class Team {
 		this.name = name;
 	}
 
+	
+
+	
+
 	public List<Member> getMembers() {
 		return members;
 	}
@@ -41,13 +45,11 @@ public class Team {
 		this.members = members;
 	}
 
-	
-
-	public Team(Long id, String name, List<Member> members) {
+	public Team(Long id, String name) {
 		super();
 		this.id = id;
 		this.name = name;
-		this.members = members;
+	
 	}
 	
 	public Team() {

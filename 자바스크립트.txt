@@ -17,7 +17,7 @@ async await 비동기
 식=값
 
 
-호이스팅  = 변수의 유효범위 영역내 젤 위로 끌어올려줌 
+호이스팅  = 변수와 함수의 유효범위 영역내 젤 위로 끌어올려줌 
 temporal dead zone (임시사각지대)-변수를 초기화하기 전에 사용하면안되는 영역
 let은 호이스팅 할때  변수를 초기화안해줌 
 var는 호이스팅 할떄 변수를 초기화 undefined
@@ -108,11 +108,11 @@ tc39 에크마스크립트 위원회 자바스크립트
 1.prototype 프로퍼티x ->생성자함수x
 
 method 메소드로만
-arrow 함수로만
+arrow 함수로만 
 
 
 this 화살표함수 바인딩 안함
-this call apply 
+this call apply  명시적 바인딩
 
 strict->함수선언문이 블록스코프에 갇힌다.
   sloppymode

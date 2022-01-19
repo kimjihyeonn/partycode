@@ -10,6 +10,7 @@ import javax.persistence.Persistence;
 
 import hellojpa.entity.Member;
 import hellojpa.entity.MemberType;
+import hellojpa.entity.Movie;
 import hellojpa.entity.Team;
 
 public class Main {
@@ -23,51 +24,39 @@ public class Main {
 
 		tx.begin();
 		try {      
-
-			Team team = new Team();
-
-			team.setName("teamA");
-		
+              
 			Member member = new Member();
-			//member.setId(100L);
-		
 			member.setName("김지현");
-			
-			
-			
-		    team.getMembers().add(member);
-		    member.setTeam(team);
-			em.persist(team);
 			em.persist(member);
-		
-		System.out.println(team.getMembers());	
-
-			 Member findmember = em.find(Member.class, member.getId()); 
-			 
-			em.persist(findmember);
 			
-			member.setName("hello");
-			findmember.setAge(33);
-			System.out.println(findmember==member);
+			Team team = new Team();
 			
-			em.close();
+			team.setName("hello");
 			
-			List<Member> mem =findmember.getTeam().getMembers();
-			System.out.println(mem.get(0).setName("hello"));
-			 
-			// findmember.setName("t아카데미");
-			 //findmember.setName("d아카데미");
+			em.persist(team);
 			
-			// findmember.setName("아아");
-			
-			 
-			/* findmember.getTeam(); findTeam.getName();
-			 * 
-			 * List<Member> members =findTeam.getMembers();
-			 * 
-			 * for(Member mber: members) { System.out.println(mber); }
+			em.flush();
+			em.clear();
+		Member member5	=em.find(Member.class, member.getId());
+			System.out.println(member5.getName());
+			System.out.println(member5.getClass());
+	    Team team3 =  member.getTeam();
+	    
+			/*
+			 * Team team2 = em.find(Team.class, team.getId());
+			 * System.out.println(team2.getClass()); List<Member> memberList =
+			 * team2.getMembers(); System.out.println(team2.getClass());
+			 * System.out.println(memberList.getClass()); for(Member member3 : memberList) {
+			 * System.out.println(member3.getName()); }
 			 */
-	  
+		 
+                
+		
+		
+		    
+		
+		
+	
    
 			tx.commit();
 		}catch (Exception e) {

@@ -47,3 +47,5 @@ function getData() {
 }
  
 console.log(getData()); 
+
+const s = new WeakSet();

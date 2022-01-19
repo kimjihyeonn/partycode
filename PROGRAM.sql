@@ -102,10 +102,109 @@ FROM (
     GROUP BY ROLLUP(AREA_CD,REGION_AREA)  
 )
 WHERE GR = DECODE(:ARG_GR,'D','00','M','01','T','11',GR)
-ORDER BY DECODE(AREA_CD,'10',:ARG_10,'20',:ARG_20
+	ORDER BY DECODE(AREA_CD,'10',:ARG_10,'20',:ARG_20
                        ,'30',:ARG_30,'40',:ARG_40
                        ,'50',:ARG_50,'60',:ARG_60
                        ,'70',:ARG_70,'80',:ARG_80
                        ,'90',:ARG_90)
         ,DECODE(:ARG_FLAG,'D',1,-1)*TO_NUMBER(GR);      
+        
+        
+        
+        
+        
+         SELECT AREA_CD
+                ,REGION_AREA
+                ,PROD_ID
+                ,SUM(SALE_CNT) SALE_CNT  
+                ,SUM(SUM(SALE_CNT))OVER(PARTITION BY AREA_CD, PROD_ID ) M_CNT
+                ,SUM(SUM(SALE_CNT))OVER(PARTITION BY PROD_ID ) T_CNT
+          FROM SALE_TBL
+          WHERE AREA_CD = NVL(:ARG_AREACD,AREA_CD)
+           AND  ROWNUM <= :ARG_CNT
+          GROUP BY AREA_CD
+                  ,REGION_AREA
+                  ,PROD_ID;
+                  
+                  
+                  
+                  SELECT*FROM SALE_TBL;
+                  
+                  
+                  
+                   SELECT AREA_CD
+            ,REGION_AREA
+            ,PROD_ID
+            ,DENSE_RANK()OVER(PARTITION BY AREA_CD,REGION_AREA ORDER BY SALE_CNT DESC) D_RK
+            ,DENSE_RANK()OVER(PARTITION BY AREA_CD ORDER BY M_CNT DESC) M_RK
+            ,DENSE_RANK()OVER(ORDER BY T_CNT DESC ) T_RK
+            ,SALE_CNT  
+      FROM (
+          SELECT AREA_CD
+                ,REGION_AREA
+                ,PROD_ID
+                ,SUM(SALE_CNT) SALE_CNT  
+                ,SUM(SUM(SALE_CNT))OVER(PARTITION BY AREA_CD, PROD_ID ) M_CNT
+                ,SUM(SUM(SALE_CNT))OVER(PARTITION BY PROD_ID ) T_CNT
+          FROM SALE_TBL
+          WHERE AREA_CD = NVL(:ARG_AREACD,AREA_CD)
+           AND  ROWNUM <= :ARG_CNT
+          GROUP BY AREA_CD
+                  ,REGION_AREA
+                  ,PROD_ID
+      );
 
+
+
+
+SELECT AREA_CD
+          ,DECODE(GROUPING(AREA_CD)||GROUPING(REGION_AREA) 
+                 ,'00', MIN(CD_NM) ,'01',MIN(CD_NM)||'ÇÕ°è','ÃÑ°è') CD_NM
+          ,REGION_AREA
+          ,NVL(SUM(DECODE(PROD_ID,'00001',SALE_CNT)),0) COL1
+          ,NVL(SUM(DECODE(PROD_ID,'00002',SALE_CNT)),0) COL2
+          ,NVL(SUM(DECODE(PROD_ID,'00003',SALE_CNT)),0) COL3
+          ,NVL(SUM(DECODE(PROD_ID,'00004',SALE_CNT)),0) COL4
+          ,NVL(SUM(DECODE(PROD_ID,'00005',SALE_CNT)),0) COL5
+          ,NVL(SUM(DECODE(PROD_ID,'00006',SALE_CNT)),0) COL6
+          ,NVL(SUM(DECODE(PROD_ID,'00007',SALE_CNT)),0) COL7
+          ,NVL(SUM(DECODE(PROD_ID,'00008',SALE_CNT)),0) COL8
+          ,NVL(SUM(DECODE(PROD_ID,'00009',SALE_CNT)),0) COL9
+          ,MIN(DECODE(PROD_ID,'00001',LPAD(D_RK,2,'0')||LPAD(M_RK,2,'0')||LPAD(T_RK,2,'0'))) RK1
+          ,MIN(DECODE(PROD_ID,'00002',LPAD(D_RK,2,'0')||LPAD(M_RK,2,'0')||LPAD(T_RK,2,'0'))) RK2
+          ,MIN(DECODE(PROD_ID,'00003',LPAD(D_RK,2,'0')||LPAD(M_RK,2,'0')||LPAD(T_RK,2,'0'))) RK3
+          ,MIN(DECODE(PROD_ID,'00004',LPAD(D_RK,2,'0')||LPAD(M_RK,2,'0')||LPAD(T_RK,2,'0'))) RK4
+          ,MIN(DECODE(PROD_ID,'00005',LPAD(D_RK,2,'0')||LPAD(M_RK,2,'0')||LPAD(T_RK,2,'0'))) RK5
+          ,MIN(DECODE(PROD_ID,'00006',LPAD(D_RK,2,'0')||LPAD(M_RK,2,'0')||LPAD(T_RK,2,'0'))) RK6
+          ,MIN(DECODE(PROD_ID,'00007',LPAD(D_RK,2,'0')||LPAD(M_RK,2,'0')||LPAD(T_RK,2,'0'))) RK7
+          ,MIN(DECODE(PROD_ID,'00008',LPAD(D_RK,2,'0')||LPAD(M_RK,2,'0')||LPAD(T_RK,2,'0'))) RK8
+          ,MIN(DECODE(PROD_ID,'00009',LPAD(D_RK,2,'0')||LPAD(M_RK,2,'0')||LPAD(T_RK,2,'0'))) RK9
+          ,SUM(SALE_CNT) TOT         
+          ,GROUPING(AREA_CD)||GROUPING(REGION_AREA) GR  
+          ,MAX(D_RK)+1 D_MXRK
+          ,MAX(M_RK)+1 M_MXRK
+          ,MAX(T_RK)+1 T_MXRK           
+    FROM (
+      SELECT AREA_CD
+            ,REGION_AREA
+            ,PROD_ID
+            ,DENSE_RANK()OVER(PARTITION BY AREA_CD,REGION_AREA ORDER BY SALE_CNT DESC) D_RK
+            ,DENSE_RANK()OVER(PARTITION BY AREA_CD ORDER BY M_CNT DESC) M_RK
+            ,DENSE_RANK()OVER(ORDER BY T_CNT DESC ) T_RK
+            ,SALE_CNT  
+      FROM (
+          SELECT AREA_CD
+                ,REGION_AREA
+                ,PROD_ID
+                ,SUM(SALE_CNT) SALE_CNT  
+                ,SUM(SUM(SALE_CNT))OVER(PARTITION BY AREA_CD, PROD_ID ) M_CNT
+                ,SUM(SUM(SALE_CNT))OVER(PARTITION BY PROD_ID ) T_CNT
+          FROM SALE_TBL
+          WHERE AREA_CD = NVL(:ARG_AREACD,AREA_CD)
+           AND  ROWNUM <= :ARG_CNT
+          GROUP BY AREA_CD
+                  ,REGION_AREA
+                  ,PROD_ID
+      ))A, CD_TBL B
+    WHERE A.AREA_CD = B.CD_ID
+    GROUP BY ROLLUP(AREA_CD,REGION_AREA);

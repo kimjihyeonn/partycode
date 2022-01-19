@@ -1,5 +1,7 @@
 package hellojpa.entity;
 
+import java.util.Date;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
@@ -9,8 +11,14 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.Lob;
 import javax.persistence.ManyToOne;
+import javax.persistence.SequenceGenerator;
+import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
+//업무내용(도메인) Entity맵핑 
 @Entity
 public class Member {
            
@@ -19,9 +27,46 @@ public class Member {
 	@Column(name = "USERNAME")
 	private String name;
 	private int age;
+	
+	@Enumerated(EnumType.STRING)
+	private MemberType memberType;
+	
+	@Temporal(TemporalType.TIMESTAMP)
+	private Date createdDate;
+	
+	@Temporal(TemporalType.TIMESTAMP)
+	private Date lastModifiedDate;
+	
+	@Lob
+	private String description;
+	public MemberType getMemberType() {
+		return memberType;
+	}
+	public void setMemberType(MemberType memberType) {
+		this.memberType = memberType;
+	}
+	public Date getCreatedDate() {
+		return createdDate;
+	}
+	public void setCreatedDate(Date createdDate) {
+		this.createdDate = createdDate;
+	}
+	public Date getLastModifiedDate() {
+		return lastModifiedDate;
+	}
+	public void setLastModifiedDate(Date lastModifiedDate) {
+		this.lastModifiedDate = lastModifiedDate;
+	}
+	public String getDescription() {
+		return description;
+	}
+	public void setDescription(String description) {
+		this.description = description;
+	}
+
 	//@Column(name="TEAM_ID")
 	//private Long teamId;
-	@ManyToOne(fetch = FetchType.LAZY)
+	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name="TEAM_ID")
 	private Team team;
 	

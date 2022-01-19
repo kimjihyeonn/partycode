@@ -25,7 +25,7 @@ public class SelectTest {
 		InputStream inputStream = Resources.getResourceAsStream(resource);
 		sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream);
 	}
-    @Ignore
+    //@Ignore
 	@Test
 	public void selectArtist() throws IOException {
 
@@ -77,7 +77,7 @@ public class SelectTest {
 			album.getSongs().forEach(song -> logger.info("  |- song 매핑   : {}", song));
 		}
 	}
-   
+   @Ignore
 	@Test
 	public void selectMstAlbumSong() throws IOException {
 
