@@ -1,0 +1,25 @@
+iterable => [Symbol.iterator]()
+iterator => iterator => {next(),value}
+iterable /iterator protocol
+for , ...{}
+const for of
+
+
+
+
+const iterable = {
+    [Symbol.iterator]() {
+        let i = 3;
+        return {
+            next() {
+                return i ==0 ? {done:true} : {value : i-- , done:false};
+            },
+            [Symbol.iterator](){
+                return this;
+            } }}};
+
+
+
+iterable[Symbol.iterator]();
+
+promise 비동기적 처리

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="JpbDataSourceConfig">
+    <data-sources>
+      <data-source id="1002f1eb-70b8-4675-a7a5-6872fcb0cff3" name="myleaf" url="jdbc:oracle:thin:@//localhost/myleaf" driverClass="oracle.jdbc.OracleDriver" />
+    </data-sources>
+  </component>
+</project>

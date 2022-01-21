@@ -1,0 +1,30 @@
+collect() 최종연산
+
+Collectors 클래스가  Collector 인터페이스를 구현했음
+
+스트림을 컬렉션, 배열로 변환
+
+스트림을 컬렉션으로 변환 -> toList(), toSet(), toMap() , toCollection()
+
+List<String> names = stuStream.map(Student::getName).collect(Collectors.toList());
+
+항등함수 입력->출력
+
+ArrayList<String> lsit = names.Stream().collect(Collectors.toCollection(ArrayList::new);
+
+Map<String, Person> map = personStream.collect(Collectors.toMap(p->p.getRegid(),p->) );
+
+
+
+Stream.toArray(클래스:new);
+
+long count =stuStream.count();
+long count = stuStream.collect(counting());
+
+
+partitioningBy() 스트림을 2분할
+groupingBy() 스트림을 n분할
+
+
+
+
