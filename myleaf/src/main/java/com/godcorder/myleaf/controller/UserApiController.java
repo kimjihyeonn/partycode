@@ -2,10 +2,13 @@ package com.godcorder.myleaf.controller;
 
 
 import com.godcorder.myleaf.model.Board;
+import com.godcorder.myleaf.model.QUsers;
 import com.godcorder.myleaf.model.Users;
 import com.godcorder.myleaf.repository.AccountRepository;
 
+import com.querydsl.core.types.Predicate;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.web.session.RequestedUrlRedirectInvalidSessionStrategy;
 import org.springframework.web.bind.annotation.*;
 import org.thymeleaf.util.StringUtils;
 
@@ -23,9 +26,26 @@ class UserApiController {
     // Aggregate root
     // tag::get-aggregate-root[]
     @GetMapping("/account")
-    List<Users> all() {
+    Iterable<Users> all(@RequestParam(required = false) String method,@RequestParam(required = false) String text) {
+        Iterable<Users> users = null;
+        if("query".equals(method)){
+           users= repository.findByUsernameQuery(text);
+        } else if("querydsl".equals(method)){
+            QUsers user = QUsers.users;
+           Predicate predicate = user.username.contains(text);
+          users= repository.findAll(predicate);
 
-            return repository.findAll();
+        /*    Predicate predicate = user.firstname.equalsIgnoreCase("dave")
+                    .and(user.lastname.startsWithIgnoreCase("mathews"));
+
+            userRepository.findAll(predicate);*/
+        }
+
+        else {
+            users= repository.findAll();
+        }
+
+            return users;
 
 
     }

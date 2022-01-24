@@ -7,6 +7,7 @@ import java.util.List;
 import com.godcorder.myleaf.model.Board;
 import com.godcorder.myleaf.repository.BoardRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.annotation.Secured;
 import org.springframework.web.bind.annotation.*;
 import org.thymeleaf.util.StringUtils;
 
@@ -63,9 +64,11 @@ class BoardApiController {
                     return repository.save(newBoard);
                 });
     }
-
+    @Secured("ROLE_ADMIN")
     @DeleteMapping("/board/{id}")
     void deleteBoard(@PathVariable Long id) {
+
+
         repository.deleteById(id);
     }
 }
