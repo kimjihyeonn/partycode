@@ -1,0 +1,15 @@
+package 은행입금처리예제;
+
+public class BankAccountManagement {
+
+	public static void main(String[] args) {
+		 Customer customerA= new Customer("김지현");
+		 Customer customerB= new Customer("김지현A");
+		 Customer customerC= new Customer("김지현B");
+		 
+		 customerA.start();
+		 customerB.start();
+		 customerC.start();
+	}
+
+}

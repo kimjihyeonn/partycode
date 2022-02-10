@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>이미지에 zoom 적용하기 예제</title>
+<style>
+  p{ font:bold 20px/1 sans-serif; }
+  .zoom {display:inline-block;}
+  .zoom img {width:500px; heignt:200px;}
+  
+</style>
+<!-- 추가요 -->
+<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+<script src="js/jquery.zoom.js"></script>
+<script>
+   $(document).ready(function(){
+	   $('#ex1').zoom(); //마우스 올릴 때 확대
+	   $('#ex2').zoom({ on:'grab'}); //클릭된 동안 땡겨짐
+	   $('#ex3').zoom({ on:'click'}); //클릭하면 줌 작동 토글
+	   $('#ex4').zoom({ on:'toggle'}); //클릭한 부분만 땡겨짐 토글	   
+   });
+</script>
+</head>
+<body>
+    <div>
+       <div class="zoom" id="ex1">
+         <img src="./images/main_banner_1.jpg"/>
+         <p>마우스를 올리면 확대됩니다.</p>
+        
+       </div>
+    </div>
+    
+     <div>
+       <div class="zoom" id="ex2">
+         <img src="./images/main_banner_2.jpg"/>
+         <p>클릭된 동안 땡겨집니다.</p>
+        
+       </div>
+    </div>
+    
+      <div>
+       <div class="zoom" id="ex3">
+         <img src="./images/main_banner_3.gif"/>
+         <p>클락하면 줌 작동 토글됩니다.</p>
+        
+       </div>
+    </div>
+
+        <div>
+       <div class="zoom" id="ex4">
+         <img src="./images/main_banner_4.gif"/>
+         <p>클릭한 부분 땡겨짐 토글</p>
+        
+       </div>
+    </div>
+
+
+</body>
+</html>

@@ -1,0 +1,15 @@
+package 은행입금처리예제;
+
+/*
+ * 고객의 입금 조작클래스
+ */
+
+public class Customer extends Thread {
+	
+	
+    	 
+    	 
+	
+}
+    
+

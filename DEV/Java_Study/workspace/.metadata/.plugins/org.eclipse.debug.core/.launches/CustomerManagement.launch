@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<launchConfiguration type="org.eclipse.jdt.launching.localJavaApplication">
+<listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_PATHS">
+<listEntry value="/0803_윈도우프로그램실습/src/고객관리시스템_추가_수정_삭제/CustomerManagement.java"/>
+</listAttribute>
+<listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_TYPES">
+<listEntry value="1"/>
+</listAttribute>
+<booleanAttribute key="org.eclipse.jdt.launching.ATTR_EXCLUDE_TEST_CODE" value="true"/>
+<stringAttribute key="org.eclipse.jdt.launching.MAIN_TYPE" value="고객관리시스템_추가_수정_삭제.CustomerManagement"/>
+<stringAttribute key="org.eclipse.jdt.launching.PROJECT_ATTR" value="0803_윈도우프로그램실습"/>
+</launchConfiguration>

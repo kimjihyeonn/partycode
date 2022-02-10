@@ -1,0 +1,19 @@
+package 가상로봇_릴레이경주하기;
+/*
+ * 작업스레드
+ */
+//RobotRace 클래스는 스레드를 처리할 수 있는 스레드 클래스가 된것이다.
+public class RobotRace extends Thread {
+     //생성자
+	public RobotRace(String name) {
+		super(name);
+		
+		
+	}
+	//run() 메소드를 수동으로 오버라이딩시키는 방법
+     @Override
+    public void run() {
+    	// TODO Auto-generated method stub
+    	super.run();
+    }	
+}

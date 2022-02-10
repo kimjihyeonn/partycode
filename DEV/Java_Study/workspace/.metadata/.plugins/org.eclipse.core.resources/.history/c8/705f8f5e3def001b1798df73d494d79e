@@ -1,0 +1,16 @@
+package 스레드_실습;
+
+import java.awt.Toolkit;
+
+/*
+ * 싱글스레드 어플리케이션 구현
+ */
+
+public class BeepPrintEx {
+
+	public static void main(String[] args) {
+		Toolkit toolkit = Toolkit.getDefaultToolkit();
+
+	}
+
+}

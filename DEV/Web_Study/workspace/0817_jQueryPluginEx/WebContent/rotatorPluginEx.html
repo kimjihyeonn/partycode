@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>rotator jQuery 플러그인 예제</title>
+<!-- CSS 적용 -->
+<style>
+	.divHeight {float:left;}
+	img {width:150px; height:200px;}
+</style>
+
+<!-- jQuery 인클루드 --> 
+<script src = "js/jquery.js"></script>
+
+<!-- jQuery 플러그인 인클루드 -->
+<script src = "js/jquery.rotator.js"></script>
+
+<script>
+	$(document).ready(function() {
+		$("#rotator1").rotator({ms:1000});
+	});
+</script>
+</head>
+<body>
+	<h2>CGV 현재 상영작/개봉 예정</h2>
+	<div id = "rotator1">
+		<div class = "divHeight">
+			<img src = "images/싱크홀.jpg" hspace = "20">
+			<br><center><b>싱크홀</b></center>
+		</div>
+		
+		<div class = "divHeight">
+			<img src = "images/모가디슈.jpg" hspace = "20">
+			<br><center><b>모가디슈</b></center>
+		</div>
+		
+		<div class = "divHeight">
+			<img src = "images/프리가이.jpg" hspace = "20">
+			<br><center><b>프리가이</b></center>
+		</div>
+		
+		<div class = "divHeight">
+			<img src = "images/블랙위도우.jpg" hspace = "20">
+			<br><center><b>블랙위도우</b></center>
+		</div>
+	</div>
+	<br><br><br><br><br><br><br><br>
+	<div id = "movieselect">
+		<b>영화선택</b>
+		<select name = "movie">
+			<option selected>영화선택</option>
+			<option>싱크홀</option>
+			<option>모가디슈</option>
+			<option>프리가이</option>
+			<option>블랙위도우</option>
+		</select>
+	</div>
+</body>
+</html>

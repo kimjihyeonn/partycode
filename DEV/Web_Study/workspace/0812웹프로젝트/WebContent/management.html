@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<script>
+showtext =new Array(8);
+showtext[0]="안녕하세요"
+showtext[1]="저의이름은"
+showtext[2]="김지현입니다."
+showtext[3]="메롱"
+showtext[4]="하하하하하하하"
+showtext[5]="으으으으으으응"
+showtext[6]="헤헤헤헤에으응"
+showtext[7]="오오오오응ㅇㅇ"
+
+
+var idx =0;
+var pos =0;
+var len =8;
+function startTyping(){
+	document.myForm.tfield.value = showtext[idx].substring(0,pos)+"_";
+	if(pos==showtext[idx].length){
+		pos=0;
+		idx++
+		if(idx==len)
+			{idx =0;}
+		timeout=setTimeout("startTyping()",1200);
+	}
+			
+		else{
+			pos++;
+			timeout=setTimeout("startTyping()",100);}
+		
+	}
+	
+	function stopTyping(){
+		clearTimeout(timeout);
+		
+	}
+
+
+</script>
+</head>
+<body onLoad="startTyping()">
+<h2>타이핑 하는것처럼 문자열 보여주기</h2>
+<form name="myForm"
+>
+<input type="text" name="tfield" size="80" style="background-color:yellow"
+onMouseOver="stopTyping()"
+	onMouseOut="startTyping()"
+	
+/>
+
+
+
+</form>
+</body>
+</html>

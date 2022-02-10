@@ -1,0 +1,16 @@
+package 샘플2방식약한결합;
+/*
+ * 구현 클래스 =>인터페이스로부터 구현받은 클래스
+ * 
+ */
+
+public class MessageBeanEn implements MessageBean {
+
+	@Override   //재정의
+	public void sayHello(String name) {
+		System.out.println("Hello," + name + "!");
+		
+		
+	}
+
+}

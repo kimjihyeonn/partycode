@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<style>
+span { color:red;}
+form{width:50%; height: auto; margin:0 auto;}
+table{border-spacing:2px;}
+</style>
+<script>
+Now = new Date();
+
+NowYear = Now.getYear();
+if (NowYear < 2000) NowYear += 1900;
+
+function WriteYearOptions(YearsAhead)
+{
+  line = "";
+  for (i=0; i<YearsAhead; i++)
+  {
+    line += "<OPTION>";
+    line += NowYear - i;
+  }
+  return line;
+}
+// -->
+</script>
+
+
+
+
+</head>
+<body>
+<p>
+    <h1 align="center">회원 가입</h1>
+</p>
+<br>
+<br><br>
+<form name="form" method="post"
+ height="auto" width="50%">
+ <div style="text-align:right;">
+<span>*</span>필수입력사항</div>
+ 
+<table width="100%" height="80" border="1" align="center" cellpadding="5" cellspacing="0" >
+
+    <tr align="center">
+        <td colspan="2" align="center" bgcolor="orange">
+              <div style="font-weight: bold; font-size: 18px">회원 기본 정보
+            </div></td>
+    </tr>
+    <tr>
+        <td  align="center">
+            <div style="font-weight: bold;">아이디<span>*</span>
+            </div></td>
+        <td>&nbsp<input type="text" placeholder="8자 이상의 영문과 숫자" minlength="8">
+            <input type="submit" value="ID중복확인"></td>
+            
+    </tr>
+    <tr>
+        <td  align="center"><div style="font-weight: bold;">비밀번호<span>*</span></div></td>
+        <td>&nbsp<input type="password" id="pwd" name="pwd"  maxlength="12">
+            &nbsp8~12자의 영문 대소문자와 숫자,특수문자로만 입력</td>
+    </tr>
+    <tr>
+        <td  align="center"><div style="font-weight: bold;">비밀번호 확인<span>*</span></div></td>
+        <td>&nbsp<input type="password" id="repwd" name="repwd"  maxlength="12"></td>
+    </tr>
+    <tr>
+        <td  align="center"><div style="font-weight: bold;">이름<span>*</span></div></td>
+        <td>&nbsp<input type="text" name="name" id="name"></td>
+    </tr>
+    <tr>
+        <td  align="center"><div style="font-weight: bold;">닉네임<span>*</span></div></td>
+        <td>&nbsp<input type="text" name="Nname" id="Nname" >&nbsp2~8자리의 한글로만 입력</td>
+    </tr>
+      <tr>
+        <td  align="center">
+            <div style="font-weight: bold;">이메일<span>*</span>
+            </div></td>
+        <td>&nbsp<input type="text" name="email" id="email">@<input type="text" name="email" id="email2">
+            <select>
+            <option selected="selected">직접입력</option>
+            <option></option>
+            <option></option>
+            <option></option>
+            <option></option>
+            </select></td>
+            
+    </tr>
+      <tr>
+        <td  align="center">
+            <div style="font-weight: bold;">주민번호<span>*</span>
+            </div></td>
+        <td>&nbsp<input type="text" name="junum" id="junum" maxlength="6">-
+        <input type="text" name="junum2" id="junum2" maxlength="7">
+            <input type="submit" value="주민번호 정상 유무 체크"></td>
+            
+    </tr>
+    <tr>
+        <td  align="center"><div style="font-weight: bold;">휴대폰<span>*</span></div></td>
+        <td>&nbsp<input type="text" name="phone" id="phone">
+            예)010-1234-5678</td>
+    </tr>
+    <td align="center"><div style="font-weight:bold;">성별<span>*</span></div></td>
+    <td>&nbsp<label><input type="radio" name="gender" value="남성">남성</label>&nbsp&nbsp
+           <label><input type="radio" name="gender" value="여성">여성</label></td>
+   
+        
+    </tr>
+    
+    <tr>
+        <td  align="center"><div style="font-weight: bold;">생년월일<span>*</span></div></td>
+        <td>&nbsp<SELECT name="year" id="year" >
+        <script>
+                document.write(WriteYearOptions(150));
+        </SCRIPT>
+</SELECT>
+            
+            <select name="month" id="month">
+            <option value="1" selected="selected">1</option>
+            <option value="2">2</option>
+                <option value="3" >3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+            <option value="11">11</option>
+            <option value="12">12</option>
+            </select>
+            월&nbsp<select name="day" id="day">
+            <option value="1" selected="selected">1</option>
+            <option value="2">2</option>
+                <option value="3" >3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+            <option value="11">11</option>
+            <option value="12">12</option>
+                <option value="13">13</option>
+            <option value="14">14</option>
+            <option value="15">15</option>
+            <option value="16">16</option>
+            <option value="17">17</option>
+            <option value="18">18</option>
+            <option value="19">19</option>
+            <option value="20">20</option>
+            <option value="21">21</option>
+            <option value="22">22</option>
+                <option value="23">23</option>
+            <option value="24">24</option>
+            <option value="25">25</option>
+            <option value="26">26</option>
+            <option value="27">27</option>
+            <option value="28">28</option>
+            <option value="29">29</option>
+            <option value="30">30</option>
+            <option value="31">31</option>
+            </select>일</td>
+    </tr>
+    <tr>
+        <td align="center"><div style="font-weight: bold;">직업<span>*</span></div></td>
+        <td><select>
+        <option value="직업선택" selected="selected">직업선택</option>
+        <option></option>
+        <option></option>
+        </select></td>
+    </tr>
+    <tr>
+        <td align="center"><div style="font-weight: bold;">주소<span>*</span></div></td>
+        <td><input type="text" placeholder="우편번호"><input type="submit" value="우편번호 찾기"><br><br>
+         <input type="text" size="110" placeholder="주소">
+         <br>
+         <input type="text" size="55" placeholder="참고항목(도로명인 경우 지역 동이름과 어쩌고저쩌고)"><input type="text" size="55" placeholder="상세주소(아마트 동수 어쩌고저쩌고)"></td>
+        
+    </tr>
+    
+   
+    
+    <tr align="center">
+        <td colspan="2" align="center" >
+            <div style="font-weight: bold; font-size: 18px"><input type="submit" name="submit" value="회원가입 등록" >&nbsp&nbsp&nbsp
+    <input type="reset" value="다시하기">
+            </div></td>
+    </tr>
+   
+    
+</table>
+
+    </FORM>
+
+</body>
+</html>

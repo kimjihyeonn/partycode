@@ -1,0 +1,8 @@
+package 샘플2방식약한결합;
+
+public class HelloApp {
+	
+	//인터페이스명  객체 참조변수  = new 구현클래스
+	MessageBean bean1 = new MessageBeanEn();
+	bean1.
+}

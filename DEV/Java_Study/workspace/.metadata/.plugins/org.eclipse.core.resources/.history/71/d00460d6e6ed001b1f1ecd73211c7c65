@@ -1,0 +1,32 @@
+package 인터페이스_예제;
+
+public class Television implements RemoteControl{
+   //멤버변수 선언
+	private int volumn;
+	
+	@Override
+	public void turnOn() {
+		System.out.println("텔레비전 전원을 킵니다.");
+		
+	}
+
+	@Override
+	public void turnOff() {
+		System.out.println("텔레비전 전원을 끕니다");
+		
+	}
+
+	@Override
+	public void setVolum(int volumn) {
+		if(volumn> RemoteControl.MAX_VOLUMN) {
+			this.volumn = RemoteControl.MAX_VOLUMN;
+			
+		}else if(volumn <RemoteControl.MIN_VOLUMN) {
+			this.volumn=RemoteControl.MIN_VOLUMN;
+		}
+			
+		
+		
+	}
+
+}

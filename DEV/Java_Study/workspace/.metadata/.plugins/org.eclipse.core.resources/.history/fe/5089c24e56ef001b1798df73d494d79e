@@ -1,0 +1,24 @@
+package 은행입금처리예제;
+
+/*
+ * 고객의 입금 조작클래스
+ */
+
+public class Customer extends Thread {
+	
+	Account acnt;  //계좌 객체 참조변수
+    //생성자
+	public Customer(String name,Account acnt) {
+		super(name); //이름을 설정하기 위해서
+		this.acnt=acnt;
+		
+	}
+	
+	
+	
+    	 
+    	 
+	
+}
+    
+

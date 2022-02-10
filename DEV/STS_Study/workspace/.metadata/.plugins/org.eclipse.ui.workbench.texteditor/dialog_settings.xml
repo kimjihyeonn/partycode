@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
+		<item key="selection" value="modal-con"/>
+		<item key="wrap" value="true"/>
+		<item key="casesensitive" value="false"/>
+		<item key="wholeword" value="false"/>
+		<item key="incremental" value="false"/>
+		<item key="isRegEx" value="false"/>
+		<list key="findhistory">
+			<item value="modal-con"/>
+			<item value="modal"/>
+			<item value="modal-content"/>
+			<item value="getList"/>
+			<item value="profile"/>
+			<item value="hover"/>
+			<item value="control"/>
+			<item value="carousel con"/>
+			<item value="caro"/>
+			<item value="slide"/>
+			<item value="form"/>
+			<item value="interval"/>
+			<item value="like"/>
+			<item value="text"/>
+			<item value="my"/>
+		</list>
+		<list key="replacehistory">
+		</list>
+	</section>
+	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
+		<item key="DIALOG_X_ORIGIN" value="201"/>
+		<item key="DIALOG_Y_ORIGIN" value="356"/>
+		<item key="DIALOG_WIDTH" value="288"/>
+		<item key="DIALOG_HEIGHT" value="391"/>
+		<item key="DIALOG_FONT_NAME" value="1|맑은 고딕|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|맑은 고딕"/>
+	</section>
+</section>

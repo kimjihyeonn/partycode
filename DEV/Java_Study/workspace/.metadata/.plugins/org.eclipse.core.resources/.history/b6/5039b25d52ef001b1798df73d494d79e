@@ -1,0 +1,15 @@
+package 篮青涝陛贸府抗力;
+
+public class Account extends Thread{
+
+	public String Customername;
+	public String account;
+		public Account(String account) {
+			super(account);
+		}
+	
+		
+		
+		
+
+}

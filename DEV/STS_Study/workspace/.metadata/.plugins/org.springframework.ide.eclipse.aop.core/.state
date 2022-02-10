@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aop-reference-model>
+<aop-project name="0902_MVC_FW"/>
+<aop-project name="BusinessComponentEx"/>
+<aop-project name="Spring_MVC_Board"/>
+<aop-project name="914 Spring_Annotation_Board"/>
+<aop-project name="PartyCode"/>
+<aop-project name="0901_MVC_Model2"/>
+<aop-project name="MyWeb"/>
+<aop-project name="AOP_Test">
+<aspect-definition advice-class-name="com.company.aopex.test.LogAdvice" advice-method-name="printLog()" advice-type="BEFORE" aspect-end-line-number="19" aspect-name="log" aspect-start-line-number="19" factory-id="org.springframework.ide.eclipse.aop.core.beanAspectDefinitionElementFactory" file="/AOP_Test/src/main/resources/applicationContext.xml" pointcut-expression="execution(* com.company.aopex..*Impl.*(..))" proxy-target-class="false">
+<aop-reference advice-type="BEFORE" bean="1:BeansModel|2:AOP_Test|3:src/main/resources/applicationContext.xml|7:beans:8|8:boardService:8" bean-file="/AOP_Test/src/main/resources/applicationContext.xml" bean-start-line="8" factory-id="org.springframework.ide.eclipse.aop.core.aopReferenceElementFactory" file="/AOP_Test/src/main/resources/applicationContext.xml" source="=AOP_Test/src\/main\/java&lt;com.company.aopex.test{LogAdvice.java[LogAdvice~printLog" source-start-line="7" target="=AOP_Test/src\/main\/java&lt;com.company.aopex.Impl{BoardServiceImpl.java[BoardServiceImpl~getBoardList~QBoardDO;" target-start-line="48"/>
+<aop-reference advice-type="BEFORE" bean="1:BeansModel|2:AOP_Test|3:src/main/resources/applicationContext.xml|7:beans:8|8:boardService:8" bean-file="/AOP_Test/src/main/resources/applicationContext.xml" bean-start-line="8" factory-id="org.springframework.ide.eclipse.aop.core.aopReferenceElementFactory" file="/AOP_Test/src/main/resources/applicationContext.xml" source="=AOP_Test/src\/main\/java&lt;com.company.aopex.test{LogAdvice.java[LogAdvice~printLog" source-start-line="7" target="=AOP_Test/src\/main\/java&lt;com.company.aopex.Impl{BoardServiceImpl.java[BoardServiceImpl~deleteBoard~QBoardDO;" target-start-line="41"/>
+<aop-reference advice-type="BEFORE" bean="1:BeansModel|2:AOP_Test|3:src/main/resources/applicationContext.xml|7:beans:8|8:boardService:8" bean-file="/AOP_Test/src/main/resources/applicationContext.xml" bean-start-line="8" factory-id="org.springframework.ide.eclipse.aop.core.aopReferenceElementFactory" file="/AOP_Test/src/main/resources/applicationContext.xml" source="=AOP_Test/src\/main\/java&lt;com.company.aopex.test{LogAdvice.java[LogAdvice~printLog" source-start-line="7" target="=AOP_Test/src\/main\/java&lt;com.company.aopex.Impl{BoardServiceImpl.java[BoardServiceImpl~getBoard~QBoardDO;" target-start-line="54"/>
+<aop-reference advice-type="BEFORE" bean="1:BeansModel|2:AOP_Test|3:src/main/resources/applicationContext.xml|7:beans:8|8:boardService:8" bean-file="/AOP_Test/src/main/resources/applicationContext.xml" bean-start-line="8" factory-id="org.springframework.ide.eclipse.aop.core.aopReferenceElementFactory" file="/AOP_Test/src/main/resources/applicationContext.xml" source="=AOP_Test/src\/main\/java&lt;com.company.aopex.test{LogAdvice.java[LogAdvice~printLog" source-start-line="7" target="=AOP_Test/src\/main\/java&lt;com.company.aopex.Impl{BoardServiceImpl.java[BoardServiceImpl~updateBoard~QBoardDO;" target-start-line="34"/>
+<aop-reference advice-type="BEFORE" bean="1:BeansModel|2:AOP_Test|3:src/main/resources/applicationContext.xml|7:beans:8|8:boardService:8" bean-file="/AOP_Test/src/main/resources/applicationContext.xml" bean-start-line="8" factory-id="org.springframework.ide.eclipse.aop.core.aopReferenceElementFactory" file="/AOP_Test/src/main/resources/applicationContext.xml" source="=AOP_Test/src\/main\/java&lt;com.company.aopex.test{LogAdvice.java[LogAdvice~printLog" source-start-line="7" target="=AOP_Test/src\/main\/java&lt;com.company.aopex.Impl{BoardServiceImpl.java[BoardServiceImpl~insertBoard~QBoardDO;" target-start-line="27"/>
+</aspect-definition>
+</aop-project>
+<aop-project name="CouplingEx"/>
+<aop-project name="SpringBasic"/>
+</aop-reference-model>

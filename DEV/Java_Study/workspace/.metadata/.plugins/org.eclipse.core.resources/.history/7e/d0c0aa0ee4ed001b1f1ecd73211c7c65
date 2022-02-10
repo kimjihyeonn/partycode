@@ -1,0 +1,10 @@
+package 인터페이스_예제;
+
+public interface RemoteControl {
+   //상수선언 초기화
+	
+	/*public static final*/ int MAX_VOLUMN =10;  //파란색이며 기울러져있다.
+	
+	int MIN_VOLUMN=0;
+	
+}

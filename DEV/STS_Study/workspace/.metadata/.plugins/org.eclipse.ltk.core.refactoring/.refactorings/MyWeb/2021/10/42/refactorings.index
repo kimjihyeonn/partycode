@@ -1,0 +1,7 @@
+1634267829445	Rename package 'com.coding404.user.controller'
+1634271451800	Rename package 'com.coding404.user.mapper'
+1634271460874	Rename package 'com.coding404.user.service'
+1634271471951	Rename type 'UserMapper'
+1634271482730	Rename type 'UserService'
+1634271490561	Rename type 'UserServiceImpl'
+1634271773551	Rename type 'UserController'

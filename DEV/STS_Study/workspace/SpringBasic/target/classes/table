@@ -1,0 +1,25 @@
+//////////////////계정생성///////////////////////
+--계정생성
+create user spring identified by spring;
+--권한
+grant connect,dba,resource to spring;
+
+--테이블 스페이스 지정.
+
+alter user spring
+ default TABLESPACE users QUOTA UNLIMITED ON users;
+/////////////////////////////////////////////////////////////
+
+테이블 생성하기
+create table score(
+  num number(10) primary key,
+  name varchar2(50),
+  kor  number(3),
+  eng number(3),
+  math number(3)
+);
+
+//////////////////////////////////////////////
+create sequence score_seq INCREMENT by 1 start with 1;
+시퀀스 증가
+////////////////////////////////////////////////

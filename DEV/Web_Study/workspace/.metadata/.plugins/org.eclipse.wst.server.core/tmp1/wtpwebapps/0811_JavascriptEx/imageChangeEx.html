@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>이미지 파일 동적으로 교체하여 보여주기</title>
+<style>
+	img { width:500px; height:300px; }
+</style>
+
+<script>
+	//소스 변경(유지 보수)
+	var imgs = new Array();
+	
+	var index = 0;
+	
+	imgs.push("./images/img1.jpg");
+	imgs.push("./images/img2.jpg");
+	imgs.push("./images/img3.jpg");
+	imgs.push("./images/img4.jpg");
+	
+	//문서가 웹 프로그램에서 읽혀질 때
+	window.onload = function() { //콜백 함수
+		//[사용자 요구 사항] 2초 마다 이미지 교체 요구
+		setInterval("imageChange()", 2000); //1초마다 함수 호출
+	}
+	
+	function imageChange() {
+		var currentDate = new Date(); //현재 시스템의 연월일시분초를 얻어옴
+		//HTML과 JavaScript의 상호작용
+		var img = document.getElementById("img");
+		
+		img.src = imgs[index];
+		index++;
+		
+		if(index == imgs.length) index = 0;
+		//[힌트] 
+		/*
+			1초 % 4 = 1    => 1초 % 4 = 1
+			2초 % 4 = 2    => 3초 % 4 = 3
+			3초 % 4 = 3    => 5초 % 4 = 1
+			4초 % 4 = 0    => 7초 % 4 = 3
+			5초 % 4 = 1    => 9초 % 4 = 1
+		*/
+		//img.src = imgs[currentDate.getSeconds()%4]; //초만 얻어옴
+	}
+</script>
+</head>
+<body>
+	<center>
+		<h1>(주)휴먼 소프트 이미지 동적 교체</h1>
+		<img id = "img"/> <!-- id값만 준다 -->
+	</center>
+</body>
+</html>

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;복습1일.yoonnyeon&apos; to &apos;Yoonnyeon&apos;&#x0D;&#x0A;- Original project: &apos;복습 1일&apos;&#x0D;&#x0A;- Original element: &apos;복습1일.yoonnyeon&apos;&#x0D;&#x0A;- Renamed element: &apos;복습1일.Yoonnyeon&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;yoonnyeon&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;복습1일{yoonnyeon.java[yoonnyeon" matchStrategy="1" name="Yoonnyeon" qualified="false" references="true" similarDeclarations="false" stamp="1627120535612" textual="false" version="1.0"/>
+</session>

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;선택정렬알고리즘.Selection&apos; to &apos;SelectionSortEx01&apos;&#x0D;&#x0A;- Original project: &apos;0719_알고리즘예제&apos;&#x0D;&#x0A;- Original element: &apos;선택정렬알고리즘.Selection&apos;&#x0D;&#x0A;- Renamed element: &apos;선택정렬알고리즘.SelectionSortEx01&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;Selection&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;선택정렬알고리즘{Selection.java[Selection" matchStrategy="1" name="SelectionSortEx01" qualified="false" references="true" similarDeclarations="false" stamp="1626676344772" textual="false" version="1.0"/>
+</session>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>쇼핑몰 구축 시 change() 함수 사용 예제</title>
+<script src = "https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script>
+	function hideOption() { //문서가 읽혀질 때 이 함수를 호출
+		//어떻게 함수를 구현할까?
+		//1. 이 문서가 크롬 브라우저에서 loading 될 때 select2, select3 객체를 감추기
+		$("#select2, #select3").hide();
+		itemChange(); //함수 호출
+	}
+	
+	//상품명 선택
+	function itemChange() {
+		//어떻게 함수를 구현할까
+		//2. 상품을 선택하면 보여주기
+		$('select[name = option1]]').change(function() {
+			$("select2").show();
+		});
+		$('select[name = option2]]').change(function() {
+			$("select3").show();
+		});
+	}
+<!--
+	function hideOption(){
+		$("#select2, #select3").hide();
+		showOption();
+	};
+	function showOption(){
+		$("#select1").change(function(){
+			$("#select2").show();
+		})
+		$("#select2").change(function(){
+			$("#select3").show();
+		})
+	};
+	-->
+</script>
+</head>
+<body onload = "hideOption()">
+	<form name = "shoppingForm">
+	<h1>A 백화점 쇼핑</h1>
+	<b>와이셔츠 상품 구매 시 옵션 선택</b>
+	<br><br>
+	<select id = "select1" name = "option1">
+		<option selected>상품명 선택</option>
+		<option value = "링클프리 셔츠">링클프리 셔츠</option>
+		<option value = "라인NB 셔츠">라인NB 셔츠</option>
+		<option value = "이중ST포켓 셔츠">이중ST포켓 셔츠</option>
+		<option value = "더블카우스 셔츠">더블카우스 셔츠</option>
+		<option value = "사선배색 셔츠">사선배색 셔츠</option>
+	</select>
+	<br><br>
+	<select id = "select2" name = "option2">
+		<option selected>색상 선택</option>
+		<option value = "White">White</option>
+		<option value = "Black">Black</option>
+		<option value = "Dark red">Dark red</option>
+		<option value = "Maroon">Maroon</option>
+		<option value = "Darkcyan">Darkcyan</option>
+	</select>
+	<br><br>
+	<select id = "select3" name = "option3">
+		<option selected>사이즈 선택</option>
+		<option value = "L">L | 50,000원 | 10개 남음</option>
+		<option value = "M">M | 60,000원 | 8개 남음</option>
+		<option value = "XL">XL | 80,000원 | 5개 남음</option>
+	</select>
+	
+	</form>
+</body>
+</html>

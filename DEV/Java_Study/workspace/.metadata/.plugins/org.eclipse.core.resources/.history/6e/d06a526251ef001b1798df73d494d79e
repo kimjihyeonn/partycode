@@ -1,0 +1,15 @@
+package 篮青涝陛贸府抗力;
+
+public class Account extends Customer {
+	
+	private int money;
+	private int inputMoney;
+	public Account(String account) {
+		super(account);
+		
+	}
+
+	
+	
+    }
+

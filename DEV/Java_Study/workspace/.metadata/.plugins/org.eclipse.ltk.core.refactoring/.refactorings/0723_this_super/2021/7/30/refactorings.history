@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;This.thisEx&apos; to &apos;ThisEx&apos;&#x0D;&#x0A;- Original project: &apos;0723_this_super&apos;&#x0D;&#x0A;- Original element: &apos;This.thisEx&apos;&#x0D;&#x0A;- Renamed element: &apos;This.ThisEx&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;thisEx&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;This{thisEx.java[thisEx" matchStrategy="1" name="ThisEx" qualified="false" references="true" similarDeclarations="false" stamp="1627017113890" textual="false" version="1.0"/>
+</session>

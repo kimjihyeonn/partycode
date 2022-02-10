@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+</head>
+<body>
+<form id="form" action="result">
+이름:<input type="text" id="name"><br>
+나이:<input type="text" id="age"><br>
+<input type="submit">서버로 전송</input>
+</form>
+</body>
+</html>

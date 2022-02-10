@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>jQuery의 hide() 함수 사용법</title>
+<!-- 추가 -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script>
+ $(document).ready(function(){ //콜백함수
+	 isShow =true;
+              $("button").click(function(){
+            	  if(isShow){
+            		  isShow = false;
+            		  $("p").hide();
+            		 
+            	  }else{
+            		  isShow=true;
+            		  $("p").show();
+            		
+            	  }
+            	 
+              });	 
+ });
+ 
+</script>
+</head>
+
+<body>
+  <h3> 이 부분이 타이틀입니다.</h3>
+  <p>이 부분은 단락입니다.</p>
+  <p>이 부분은 또다른 단락입니다.</p>
+  <button>여기를 클릭하세요</button>
+</body>
+</html>

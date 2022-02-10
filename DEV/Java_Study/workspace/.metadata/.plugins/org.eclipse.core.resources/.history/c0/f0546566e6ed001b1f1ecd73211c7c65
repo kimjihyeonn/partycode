@@ -1,0 +1,23 @@
+package 인터페이스_예제;
+
+public class Television implements RemoteControl{
+
+	@Override
+	public void turnOn() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void turnOff() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void setVolum(int volumn) {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

@@ -1,0 +1,9 @@
+INDEX VERSION 1.131
+C:\DEV\Web_Study\workspace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1192708372.index
+\0826_FileUploadEx\src
+C:\DEV\Web_Study\workspace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3205525635.index
+\0823_JSP_Basic_Ex\src
+C:\DEV\Web_Study\workspace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\4096151250.index
+\0818_BootstrapEx\src
+C:\DEV\Web_Study\workspace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\753378263.index
+\0830_MVC_Moder1\src

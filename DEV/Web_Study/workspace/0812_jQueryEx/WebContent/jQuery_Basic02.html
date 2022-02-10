@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>jQuery slideToggle() 함수</title>
+<!-- CSS적용 -->
+<style>
+   div.panel, p.flip{
+      width:557px;
+      margin:auto;
+      padding:5px;
+      text-align:center;
+      background:yellow;
+      border:solid 1px blue;
+   }
+
+</style>
+<!-- JQUery 적용 -->
+<script>
+</script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script>
+  $(document).ready(function(){
+	  $(".flip").click(function(){
+		  $(".panel").slideToggle("normal");  //slow fast normal
+		  
+	  });	  
+	  
+ });
+  
+  
+</script>
+</head>
+<body>
+   <div class="panel">
+   <p>이번 실습은 slideToggle() 함수를 사용하여</p>
+   <p>선택한 엘리먼트 토글(slide-up & slide-down) 시키는 작업이다.</p>
+   
+   </div>
+   <p class="flip">여기를 클릭하세요</p>
+</body>
+</html>

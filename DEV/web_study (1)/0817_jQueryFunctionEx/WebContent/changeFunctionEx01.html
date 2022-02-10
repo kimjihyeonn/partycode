@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>change() 함수 사용 예제</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script>
+    $(function(){ //콜백 함수
+    	$("#chg").change(function(){
+    		alert("다른옵션이 선택될 때:" + $(this).val());
+    	});
+    	
+    });
+
+
+</script>
+
+</head>
+<body>
+   <div class="section">
+     <select id="chg">
+        <option>자바 </option>
+        <option>자바스크립트 </option>
+        <option>HTML</option>      
+        <option>JSP</option>    
+      </select>
+    
+   </div>
+</body>
+</html>

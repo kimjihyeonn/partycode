@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>과제1</title>
+<script>
+	function autoTab() {
+		if(document.homework.juminNo1.value.length == 6){
+			document.homework.juminNo2.focus();
+			return;
+		}
+	}
+</script>
+</head>
+<body>
+	<form name = "homework">
+		<h3>문제: 주민번호 앞 6자리를 입력 받으면 자동으로 커서가 뒤로 이동</h3>
+			이름: <input type = "text" name = "name" tabindex = "1"
+			size = "12" />
+			<br><br>
+			주민등록 번호: <input type = "text" name = "juminNo1"
+			maxlength = "6" onKeyUp = "autoTab()"/>
+			-
+				<input type = "text" name = "juminNo2" tabindex = "2"
+						maxlength = "7"/>
+	</form>
+	<!-- 
+	함수로 사용하지 않고 명령줄을 사용하여 만드는 법
+	<form name="memberForm">
+		이     름 : <input type="text" name="myname"/><br><br>
+		주민번호:<input type="text" name="jumin_num1" size="6"
+			onKeyUp="if(this(여기서 this는 현재 객체, jumin_num1).value
+			.length == 6)memberForm.jumin_num2.focus();"/>-
+			  <input type="text" name="jumin_num2" size="7"/>
+	 -->
+</body>
+</html>

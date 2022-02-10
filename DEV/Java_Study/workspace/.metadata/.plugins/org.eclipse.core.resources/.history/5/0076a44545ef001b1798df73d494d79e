@@ -1,0 +1,16 @@
+package 멀티스레드_실습;
+/*
+ * 메인스레드 역할
+ */
+
+public class BeepPrintEx02 {
+
+	public static void main(String[] args) {
+		
+    //인터페이스 이름  참조변수    =new  생성자();
+	  Runnable beepTask = new BeepTask();
+      Thread thread = new Thread(beepTask);
+      thread.start();
+	}
+    
+}

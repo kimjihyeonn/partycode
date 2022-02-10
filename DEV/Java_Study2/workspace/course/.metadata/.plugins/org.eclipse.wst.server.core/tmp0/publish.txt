@@ -1,0 +1,4 @@
+#Tomcat publish data
+#Fri Oct 15 12:05:27 KST 2021
+org.eclipse.jst.jee.server\:Test2=C\:\\DEV\\apache-tomcat-8.5.50\\wtpwebapps\\Test2
+org.eclipse.jst.jee.server\:0823_getParameterValuesEx=C\:\\DEV\\apache-tomcat-8.5.50\\wtpwebapps\\0823_getParameterValuesEx

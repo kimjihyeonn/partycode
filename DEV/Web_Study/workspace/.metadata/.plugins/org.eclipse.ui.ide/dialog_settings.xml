@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="SmartImportWizard">
+		<item value="true" key="SmartImportRootWizardPage.STORE_NESTED_PROJECTS"/>
+		<item value="false" key="SmartImportRootWizardPage.STORE_CLOSE_IMPORTED"/>
+		<item value="true" key="SmartImportRootWizardPage.STORE_CONFIGURE_NATURES"/>
+		<item value="false" key="SmartImportRootWizardPage.STORE_HIDE_ALREADY_OPEN"/>
+		<list key="org.eclipse.ui.internal.wizards.datatransfer.SmartImportRootWizardPage.knownSources">
+			<item value="C:\DEV\web_study (1)\0830_MVC_Moder1"/>
+			<item value="C:\DEV\Web_Study\workspace\0812_jQueryEx"/>
+			<item value="C:\DEV\Web_Study\workspace\0817_jQueryFunctionsEx"/>
+			<item value="C:\DEV\Web_Study\workspace\0817_jQueryPluginEx"/>
+		</list>
+	</section>
+	<section name="ResourceNavigator">
+		<item value="" key="ResourceWorkingSetFilter.STORE_WORKING_SET"/>
+		<item value="1" key="ResourceViewer.STORE_SORT_TYPE"/>
+	</section>
+</section>

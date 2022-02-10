@@ -1,0 +1,9 @@
+INDEX VERSION 1.131
+C:\DEV\Java_Study2\workspace\course\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\642482899.index
+\0824_Session_loginEx\src
+C:\DEV\Java_Study2\workspace\course\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3205525635.index
+\0823_JSP_Basic_Ex\src
+C:\DEV\Java_Study2\workspace\course\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3821372357.index
+\0823_include_directiveEx\src
+C:\DEV\Java_Study2\workspace\course\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1276629525.index
+\0823_getParameterValuesEx\src

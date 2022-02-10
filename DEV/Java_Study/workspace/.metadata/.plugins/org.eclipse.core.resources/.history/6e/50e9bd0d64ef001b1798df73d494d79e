@@ -1,0 +1,25 @@
+package 은행입금처리예제;
+
+public class BankAccountManagement {
+
+	public static void main(String[] args) {
+		 Account acntData= new Account();
+		 
+		 Customer cus1=new Customer("thread1", acntData);
+		 Customer cus2=new Customer("thread2", acntData);
+			
+		 cus1.start();
+		 cus2.start();
+		 
+		 try {
+			 cus1.join();
+			 cus2.join();
+		 }catch(InterruptedException e) {
+		 System.out.println(e);
+		 }
+		 System.out.println("최종잔액="+acntData.getBalance());
+	}
+   
+	
+	}
+

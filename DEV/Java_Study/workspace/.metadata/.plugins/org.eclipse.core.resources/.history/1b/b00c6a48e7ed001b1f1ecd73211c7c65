@@ -1,0 +1,10 @@
+package 인터페이스_예제;
+
+public class myClass {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

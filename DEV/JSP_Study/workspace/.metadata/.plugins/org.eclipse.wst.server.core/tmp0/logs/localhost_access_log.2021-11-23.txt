@@ -1,0 +1,8 @@
+127.0.0.1 - - [23/Nov/2021:15:18:51 +0900] "GET / HTTP/1.1" 404 750
+0:0:0:0:0:0:0:1 - - [23/Nov/2021:15:18:58 +0900] "GET /0823_getParameterValuesEx/requestHtml.html HTTP/1.1" 200 1244
+0:0:0:0:0:0:0:1 - - [23/Nov/2021:15:18:58 +0900] "GET /favicon.ico HTTP/1.1" 404 761
+0:0:0:0:0:0:0:1 - - [23/Nov/2021:15:19:04 +0900] "POST /0823_getParameterValuesEx/request_Result.jsp HTTP/1.1" 200 627
+0:0:0:0:0:0:0:1 - - [23/Nov/2021:15:19:43 +0900] "GET /0823_include_directiveEx/include_test.jsp HTTP/1.1" 200 1133
+127.0.0.1 - - [23/Nov/2021:15:21:08 +0900] "GET / HTTP/1.1" 404 750
+0:0:0:0:0:0:0:1 - - [23/Nov/2021:15:21:10 +0900] "GET /0823_JSP_Basic_Ex/script_elementEx.jsp HTTP/1.1" 200 337
+0:0:0:0:0:0:0:1 - - [23/Nov/2021:15:21:10 +0900] "GET /favicon.ico HTTP/1.1" 404 761

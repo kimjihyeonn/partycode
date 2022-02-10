@@ -1,0 +1,10 @@
+package 멀티스레드_실습;
+
+public class BeepPrintEx02 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

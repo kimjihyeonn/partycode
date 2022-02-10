@@ -1,0 +1,5 @@
+package 멀티스레드_실습;
+
+public class BeepTask {
+
+}

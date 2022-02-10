@@ -1,0 +1,28 @@
+package 은행입금처리예제;
+
+public class Account extends Customer {
+	
+	private int money;
+	private int inputMoney;
+	public Account(String account) {
+		super(account);
+		money=20000;
+		inputMoney=5000;
+		
+	}
+    @Override
+    public void run() {
+    	 for(int i=1; i<=10;i++) {
+    		 money=money+inputMoney;
+    		 System.out.println(getName() +"가"+i*10+"저축");
+    		 try {sleep(1000);
+    		 
+    		 }catch(InterruptedException e) {
+    			 System.out.println(e.toString());
+    		 }
+    	 }
+    	 }
+	
+}
+    
+

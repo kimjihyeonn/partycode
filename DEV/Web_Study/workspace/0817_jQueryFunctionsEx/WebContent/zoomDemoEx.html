@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>zoom</title>
+<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+<script src="js/jquery.zoom.js"></script>
+<style>
+	p{font:bold 20px/1 sans-serif;}
+	.zoom{display:inline-block;}
+	.zoom img{width:800px; height:200px;}
+</style>
+<script>
+	$(function(){
+		$('#ex1').zoom();
+		$('#ex2').zoom({on:'grab'});
+		$('#ex3').zoom({on:'click'});
+		$('#ex4').zoom({on:'toggle'});
+	});
+</script>
+</head>
+<body>
+	<div>
+		<div class="zoom" id="ex1">
+			<img src="./images/main_banner_1.jpg">
+			<p>마우스를 올리면 확대됩니다.
+		</div>
+	</div>
+	<div>
+		<div class="zoom" id="ex2">
+			<img src="./images/main_banner_2.jpg">
+			<p>클릭된 동안 당깁니다
+		</div>
+	</div>
+	<div>
+		<div class="zoom" id="ex3">
+			<img src="./images/main_banner_3.gif">
+			<p>클릭하면 줌 작동됩니다.
+		</div>
+	</div>
+	<div>
+		<div class="zoom" id="ex4">
+			<img src="./images/main_banner_4.gif">
+			<p>클릭한 부분 당겨집니다.
+		</div>
+	</div>
+</body>
+</html>

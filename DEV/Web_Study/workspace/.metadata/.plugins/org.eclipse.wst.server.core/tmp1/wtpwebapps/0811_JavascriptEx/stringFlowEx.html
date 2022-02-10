@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>자바스크립트 활용하여 문자열 흘러가기 효과</title>
+<script>
+	var msg = "-4차 산업혁명의 태풍이 온다. 인공지능, 빅데이터, IOT, 로봇공학-";
+
+	for(i=0; i<60; i++){ //msg문자열 앞에 60개의 공백
+		msg = " " + msg
+	}
+	//항상 접근할 때는 큰 객체부터 접근한다.
+	function scrollTrend(){
+		document.myForm.trend.value = msg.substring(0,59)//공백60개
+		msg = msg.substring(1, msg.length) + msg.substring(0,1)
+		timeout = setTimeout("scrollTrend()", 100)//1000분의 100초
+	}
+	//마우스를 올리면 글자가 멈추는 함수
+	function stopTrend(){
+		clearTimeout(timeout)
+	}
+</script>
+</head>
+<body onLoad="scrollTrend()">
+	<form name="myForm">
+		<table>
+			<tr>
+				<h3>IT 트랜드 보기</h3>
+				<td>
+					<input type="text" name="trend"
+						   size="100" 
+						   style="background-color:yellow"
+						   onMouseOver="stopTrend()"
+						   onMouseOut="scrollTrend()"/>
+				</td>
+			</tr>
+		</table>
+	</form>
+</body>
+</html>

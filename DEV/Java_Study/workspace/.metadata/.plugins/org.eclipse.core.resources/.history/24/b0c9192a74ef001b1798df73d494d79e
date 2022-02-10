@@ -1,0 +1,32 @@
+package 은행입출금처리예제_동기화메소드_해결;
+
+public class BankMain {
+
+	public static Bank myBank = new Bank(); // static이 붙어서 myBank객체는
+	//아무대서나 사용이된다.
+	
+	
+	
+	public static void main(String[] args) throws Exception{
+		System.out.println("현금: "+ myBank.getMoney());
+		
+		Park park = new Park();
+		ParkWife wife=new ParkWife();
+		
+		park.start();
+		wife.start();
+		
+		
+		//스레드의 종료를 기다린다.
+		park.join();
+		wife.join();
+		
+		System.out.println("은행 입출금 작업 종료!");
+		
+		
+
+	}
+	
+	
+
+}

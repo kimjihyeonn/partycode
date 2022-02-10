@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>[중요] 자바스크립트 onchange 이벤트 핸들러 실습</title>
+<!-- [사례] 회원가입 폼 만들 때 이메일 입력 처리에 적용 시 -->
+<script src="./js/change_email.js"></script>
+</head>
+<body>
+	<div>
+		<label>이메일<input type = "text" name = "email_id"
+						  id="email_id"/>@</label>
+		<input type = "text" name = "email_add" id = "email_add"/>
+		
+		<select name = "email_sel" id = "email_sel"
+				onChange = "change_email();">
+			<option selected>직접 선택 입력</option>
+			<option value = "naver.com">Naver</option>
+			<option value = "daum.net">Daum</option>
+			<option value = "hanmail.net">Hanmail</option>
+			<option value = "gmail.com">Gmail</option>
+			<option value = "nate.com">Nate</option>
+			<option value = "kakao.com">Kakao</option>
+			<option value = "dreamwize.com">Dreamwize</option>
+		</select>
+	</div>
+</body>
+</html>

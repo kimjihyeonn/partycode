@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<modules>
+  <module moduleId="org.eclipse.jst.jee.server:Spring_MVC_Board" serverId="sample - Pivotal tc Server Developer Edition"/>
+  <module moduleId="org.eclipse.jst.jee.server:0902_MVC_FW" serverId="Pivotal tc Server Developer Edition v4.0"/>
+</modules>
